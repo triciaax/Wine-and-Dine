@@ -36,21 +36,20 @@ function selectRandomCocktail(list) {
 }
 
 function getCocktailIngredients(cocktail) {
-    var ingredients = fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail.idDrink}`)
+    var recipe = fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail.idDrink}`)
         .then(response => response.json())
         .then(data => {
             //this only shows the first ingredient
             //you can get more in the same way. the ingredients and instructions are logged in the console.
             console.log(data)
-            let ingredients = data.drinks[0].strIngredient1;
-            return ingredients;
+            let recipe = data.drinks[0];
+            return recipe;
         }
         )
-    return ingredients;
+    return recipe;
 }
 
 //render cocktail function
-
 
 //listener for cocktail button
 submitCocktailButtonEl.addEventListener("click", function(){
