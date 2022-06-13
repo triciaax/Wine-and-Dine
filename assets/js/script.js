@@ -2,6 +2,7 @@
 var searchCocktailTextEl = document.getElementById("search-cocktail");
 var submitCocktailButtonEl = document.getElementById("submit-cocktail");
 var ingredientEl = document.getElementById("ingredients");
+var instructionEl = document.getElementById("instructions");
 
 //main function for API calls
 async function getRandomCocktail(ingredient) {
@@ -71,6 +72,13 @@ function renderRecipe(recipe) {
     ingredientsHTML += '</ul>';
     ingredientEl.innerHTML =ingredientsHTML;
 
+
+    //render cocktail instructions function
+    var instructionsHTML= `
+    <strong>INSTRUCTIONS</strong>
+    <p>${recipe.strInstructions}</p>`
+
+    instructionEl.innerHTML =instructionsHTML;
 }
 
 // function to get fields from the response data
