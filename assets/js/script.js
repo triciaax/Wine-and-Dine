@@ -1,3 +1,7 @@
+//global variables
+var searchCocktailTextEl = document.getElementById("search-cocktail");
+var submitCocktailButtonEl = document.getElementById("submit-cocktail");
+
 //main function for API calls
 async function getRandomCocktail(ingredient) {
     //get list of cocktails from api
@@ -44,3 +48,14 @@ function getCocktailIngredients(cocktail) {
         )
     return ingredients;
 }
+
+//render cocktail function
+
+
+//listener for cocktail button
+submitCocktailButtonEl.addEventListener("click", function(){
+    var cocktailIngredient = searchCocktailTextEl.value;
+    getRandomCocktail(cocktailIngredient);
+})
+
+getRandomCocktail("vodka")
