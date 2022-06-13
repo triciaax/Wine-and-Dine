@@ -54,7 +54,7 @@ function getCocktailIngredients(cocktail) {
   return recipe;
 }
 
-//render cocktail recipe function
+//render cocktail name and ingredients function
 function renderRecipe(recipe) {
     let measurementStrings = getRecipeFields(recipe);
     var ingredientsHTML = `
@@ -73,7 +73,7 @@ function renderRecipe(recipe) {
     ingredientEl.innerHTML =ingredientsHTML;
 
 
-    //render cocktail instructions function
+    //render cocktail instructions and image function
     var instructionsHTML= `
     <strong>INSTRUCTIONS</strong>
     <p>${recipe.strInstructions}</p>
