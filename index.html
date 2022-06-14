@@ -8,16 +8,36 @@
     
 
   </head>
+
+  <header class="hero">
+    <h1 class="Top"> Wine and Dine</h1>
+  </header>
+
+
   <body>
 
     <!--basic code to check is code is displayed and working -->
     <div class="container">
       <div class="row">
-        <div id="Drinkbutton" class="one-third column">
+        <div  class="four column">
+
+          <form id="form1" class="card-body">
+            <label class="form-label" for="Ingredient1">Ingredient</label>
+            <input name="Ingredient1" id="Ingredient1" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn button-primary">Get your Drink</button>
+          </form>
+            <!--column for information of drink result-->
+          <ul><span id="Drinkname1"></span></ul>
+          <ul id="Drinkpictures1"></ul>
+          <ul id="description1"></ul>
+
           
-          <button type="button" onclick="drinklist();" class="button-primary">get Drink</button>
-        <!--column for information of drink result-->
-        <div id="Drinkcard" class="two-thirds column">
+          <button type="button" onclick="drinklist();" class="button-primary">Get a random Drink</button>
+
+
+          <!--column for information of drink result-->
+
+         <div  class="eight column">
           <div class="drinkpicture">
             <ul><span id="Drinkname"></span></ul>
             <ul id="Drinkpictures"></ul>
@@ -25,11 +45,13 @@
       
           </div>
 
+         </div>
+        </div>
       </div>
     </div>
 
+
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/css/style.css"></script>
   </body>

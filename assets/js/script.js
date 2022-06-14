@@ -1,4 +1,31 @@
 //main function for API calls
+ 
+var myform = document.querySelector("#form1");
+var myIngredient = document.querySelector("#Ingredient1");
+
+var formSubmitHandler = function(event) {  
+    event.preventDefault();//prevent from autosubmitting
+  
+    console.log(event);
+    var Ingredient = myIngredient.value.trim();
+
+    if (Ingredient) {
+      getRandomCocktail(Ingredient);
+      myIngredient.value = "";
+    } else {
+      alert("Please enter a valid ingredient to start");
+      console.log("Event call works");
+    
+    }
+
+    
+   
+    
+};
+
+myform.addEventListener("submit", formSubmitHandler);
+
+
 async function getRandomCocktail(ingredient) {
     //get list of cocktails from api
     const list = await getCocktailList(ingredient);
@@ -22,8 +49,7 @@ function getCocktailList(ingredient) {
 }
 
 
-getRandomCocktail("gin")
-
+//getRandomCocktail("gin")
 
 function drink1(element) {
     return document.createElement(element);
@@ -36,9 +62,9 @@ function drink1(element) {
 async function drinklist(){
     var drink="https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-    let data =  await fetch(drink)
+    let data1 =  await fetch(drink)
       .then(response => response.json());
-      var {strDrink, strDrinkThumb, strInstructions} = data.drinks[0];
+      var {strDrink, strDrinkThumb, strInstructions} = data1.drinks[0];
       document.getElementById("Drinkname").textContent=strDrink;
       document.getElementById("Drinkpictures").innerHTML = '<img src="' + strDrinkThumb + '"alt="Girl in a jacket" width="100" height="100" >';
       document.getElementById("description").textContent='Instruction=' + strInstructions;
@@ -63,10 +89,21 @@ function getCocktailIngredients(cocktail) {
             //this only shows the first ingredient
             //you can get more in the same way. the ingredients and instructions are logged in the console.
             console.log(data)
+
+
+            //Code added push return input to index.html for Display
+            var {strDrink, strDrinkThumb, strInstructions} = data.drinks[0];
+      document.getElementById("Drinkname1").textContent=strDrink;
+      document.getElementById("Drinkpictures1").innerHTML = '<img src="' + strDrinkThumb + '"alt="Girl in a jacket" width="100" height="100" >';
+      document.getElementById("description1").textContent='Instruction=' + strInstructions;
+      console.log("Still work,did not break the function links :-)");
+
+
             let ingredients = data.drinks[0].strIngredient1;
             return ingredients;
         }
         )
     return ingredients;
 }
-  b17e263c2adb5dc7f284d659790dce966c66927
+  /*b17e263c2adb5dc7f284d659790dce966c66927
+*/
