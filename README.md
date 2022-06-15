@@ -6,8 +6,13 @@ Solution: A web application that allows users to select an alcohol type (vodka, 
 
 
 ## How to use it
+### Find your cocktail recipe
 1. Search for your alochol type 
-2. Search for your protein type
+2. Click "FIND A RECIPE" to find a recipe for your preferred alcohol
+   
+### Find your food recipe
+1. Search for your protein type
+2. Click "FIND A RECIPE" to find a recipe for your preferred protein
 
 ## User Story
 **AS** A user
@@ -24,6 +29,7 @@ recipe based on what selection I make for my protein
 ![wireframe web](assets/Wireframes%20Web.png)
 ![wireframe mobile](assets/Wireframe%20Mobile.png)
 
+## Screenshot
 
 ## APIs Used
 - https://www.thecocktaildb.com/
