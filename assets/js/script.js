@@ -73,7 +73,7 @@ function renderRecipe(recipe) {
     ingredientEl.innerHTML =ingredientsHTML;
 
 
-    //render cocktail instructions and image functionality
+    //render cocktail instructions and image functional
     var instructionsHTML= `
     <strong>INSTRUCTIONS</strong>
     <p>${recipe.strInstructions}</p>
