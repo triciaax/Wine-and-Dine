@@ -56,49 +56,48 @@ function getCocktailIngredients(cocktail) {
 
 //render cocktail name and ingredients function
 function renderRecipe(recipe) {
-    let measurementStrings = getRecipeFields(recipe);
-    var ingredientsHTML = `
+  let measurementStrings = getRecipeFields(recipe);
+  var ingredientsHTML = `
     <h5>${recipe.strDrink}</h5>
 
     <strong>INGREDIENTS</strong>
     <ul style="list-style-type:none;">
-    `
-    for (var i = 0; i < measurementStrings.length; i++) {
-        var innerHTML = `
+    `;
+  for (var i = 0; i < measurementStrings.length; i++) {
+    var innerHTML = `
         <li>${measurementStrings[i]}</li>
-        `
-        ingredientsHTML += innerHTML;
-    }
-    ingredientsHTML += '</ul>';
-    ingredientEl.innerHTML =ingredientsHTML;
+        `;
+    ingredientsHTML += innerHTML;
+  }
+  ingredientsHTML += "</ul>";
+  ingredientEl.innerHTML = ingredientsHTML;
 
-
-    //render cocktail instructions and image functional
-    var instructionsHTML= `
+  //render cocktail instructions and image functional
+  var instructionsHTML = `
     <strong>INSTRUCTIONS</strong>
     <p>${recipe.strInstructions}</p>
-    <img src="${recipe.strDrinkThumb}" style="width:250px;">`
+    <img src="${recipe.strDrinkThumb}" style="width:250px;">`;
 
-    instructionEl.innerHTML =instructionsHTML;
+  instructionEl.innerHTML = instructionsHTML;
 }
 
 // function to get fields from the response data
 function getRecipeFields(recipe) {
-    var measurementStrings = [];
-    for (var i = 1; i < 16; i++) {
-        let ingredient = recipe[`strIngredient${i}`]
-        if (ingredient) {
-            var measure = recipe[`strMeasure${i}`]
-            if (measure) {
-                var builtString = `${measure}${ingredient}`
-            } else {
-                var builtString = ingredient
-            }
-            measurementStrings.push(builtString);
-        }
+  var measurementStrings = [];
+  for (var i = 1; i < 16; i++) {
+    let ingredient = recipe[`strIngredient${i}`];
+    if (ingredient) {
+      var measure = recipe[`strMeasure${i}`];
+      if (measure) {
+        var builtString = `${measure}${ingredient}`;
+      } else {
+        var builtString = ingredient;
+      }
+      measurementStrings.push(builtString);
     }
-    console.log(measurementStrings)
-    return measurementStrings;
+  }
+  console.log(measurementStrings);
+  return measurementStrings;
 }
 
 //listener for cocktail button
