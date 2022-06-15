@@ -2,6 +2,7 @@
 
 ## Description
 Problem: Users need to understand what ingredients they need to make beverages and appetizers. They also need to know how to make the beverages and entrees.
+
 Solution: A web application that allows users to select an alcohol type (vodka, rum, tequila, gin, etc.) and based on their selection they will see a recipe. The user can also select a protein and find a recipe according to their selection.
 
 
