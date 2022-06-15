@@ -8,6 +8,7 @@ async function drinklist(){
       document.getElementById("Drinkname").textContent=strDrink;
       document.getElementById("Drinkpictures").innerHTML = '<img src="' + strDrinkThumb + '"alt="Girl in a jacket" width="100" height="100" >';
       document.getElementById("description").textContent='Instruction=' + strInstructions;
+      
 
       
 };

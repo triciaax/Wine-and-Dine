@@ -17,8 +17,36 @@
 
 
 <body>
-  <a class="button button-primary" href="./random.html">Anchor button</a>
+  <!--This is a button that can be place in nav to show the random hmtl-->
+  <a class="button button-primary" href="./random.html">Get a random Drink</a>
 
+
+  <div class="container">
+    <div class="row">
+      <!--left search module-->
+      <div class="five columns">
+        <div id="search-bar">
+          <label for="search">
+            <h4>PICK YOUR ALCOHOL</h4>
+          </label>
+          <div>
+            <input id="search-cocktail" class="u-full-width" placeholder="Vodka, Gin, Tequila, etc..."></input>
+            <div class="">
+              <button id="submit-cocktail" class="u-full-width">
+                Find a recipe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--right module that populates recipe, title, and ingredients list-->
+      <div class="seven columns">
+        <div id="ingredients"></div>
+          <div id="instructions"></div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
