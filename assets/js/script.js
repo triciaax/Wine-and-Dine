@@ -41,7 +41,7 @@ function selectRandomMeal(list) {
 
 function getMealIngredients(cocktail) {
   var recipe = fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meals.idMeal}`
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${StrMeal.idMeal}`
   )
     .then((response) => response.json())
     .then((data) => {
