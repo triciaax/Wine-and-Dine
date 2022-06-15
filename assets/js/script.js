@@ -81,7 +81,7 @@ function renderRecipe(recipe) {
   instructionEl.innerHTML = instructionsHTML;
 }
 
-// function to get fields from the response data
+//function to get fields from the response data
 function getRecipeFields(recipe) {
   var measurementStrings = [];
   for (var i = 1; i < 16; i++) {
