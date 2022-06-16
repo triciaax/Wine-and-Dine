@@ -27,7 +27,7 @@ recipe based on what selection I make for my protein
 **SO THAT** I know how to make a drink/entree and understand what ingredients I need
 
 ## Wireframes (Web & Mobile): 
-![wireframe web](assets/Wireframe%20Web.png)
+![wireframe web](assets/Wireframes%20Web.png)
 ![wireframe mobile](assets/Wireframe%20Mobile.png)
 
 ## Screenshot
