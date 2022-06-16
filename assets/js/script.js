@@ -9,7 +9,7 @@ async function getRandomMeal(ingredient) {
   //get list of meals from api
   const list = await getMealList(ingredient);
   //select random meal from list
-  const meals = selectRandomMeal(list);
+  var meals = selectRandomMeal(list);
   //get ingredients for selected meal
   const recipe = await getMealIngredients(meals);
   renderRecipe(recipe);
@@ -36,13 +36,14 @@ function selectRandomMeal(list) {
   // multiply by list length to get a random index
   let random = Math.floor(Math.random() * Object.keys(list).length);
   console.log(random);
-  return Object.keys(random).strMeal;
+  // return Object.keys(random).strMeal;
+  return Object.values(list[random]);
 }
 
 function getMealIngredients(meals) {
-  var recipe = fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meals.idMeal}`
-  )
+  let meal = meals;
+	var recipe = fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal[2]}`)
+  // var recipe = fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meals.idMeal}`)
     .then((response) => response.json())
     .then((data) => {
       //this only shows the first ingredient
