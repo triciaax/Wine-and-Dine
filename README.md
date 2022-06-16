@@ -31,6 +31,7 @@ recipe based on what selection I make for my protein
 ![wireframe mobile](assets/Wireframe%20Mobile.png)
 
 ## Screenshot
+![screenshot](assets/screenshot.png)
 
 ## APIs Used
 - https://www.thecocktaildb.com/
