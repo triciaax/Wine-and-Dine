@@ -9,7 +9,7 @@ async function getRandomMeal(ingredient) {
   //get list of meals from api
   const list = await getMealList(ingredient);
   //select random meal from list
-  const meal = selectRandomMeal(list);
+  const meals = selectRandomMeal(list);
   //get ingredients for selected meal
   const recipe = await getMealIngredients(meals);
   renderRecipe(recipe);
@@ -34,9 +34,9 @@ function selectRandomMeal(list) {
   //math.random() returns a random number between 0 and 1
   //math.floor rounds down to the nearest integer
   // multiply by list length to get a random index
-  let random = Math.floor(Math.random() * list.length);
+  let random = Math.floor(Math.random() * Object.keys(list).length);
   console.log(random);
-  return list[random];
+  return Object.keys(random).strMeal;
 }
 
 function getMealIngredients(cocktail) {
