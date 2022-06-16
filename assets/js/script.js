@@ -39,7 +39,7 @@ function selectRandomMeal(list) {
   return Object.keys(random).strMeal;
 }
 
-function getMealIngredients(cocktail) {
+function getMealIngredients(meals) {
   var recipe = fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meals.idMeal}`
   )
@@ -54,7 +54,7 @@ function getMealIngredients(cocktail) {
   return recipe;
 }
 
-//render cocktail name and ingredients function
+//render meal name and ingredients function
 function renderRecipe(recipe) {
   let measurementStrings = getRecipeFields(recipe);
   var ingredientsHTML = `
