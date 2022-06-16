@@ -1,6 +1,6 @@
 //global variables
-var searchMealTextEl = document.getElementById("search-meal");
-var submitMealButtonEl = document.getElementById("submit-meal");
+var searchMealTextEl = document.getElementById("search-meals");
+var submitMealButtonEl = document.getElementById("submit-meals");
 var ingredientEl = document.getElementById("ingredients");
 var instructionEl = document.getElementById("instructions");
 
@@ -41,7 +41,7 @@ function selectRandomMeal(list) {
 
 function getMealIngredients(cocktail) {
   var recipe = fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${StrMeal.idMeal}`
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meals.idMeal}`
   )
     .then((response) => response.json())
     .then((data) => {
