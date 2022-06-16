@@ -1,8 +1,8 @@
 //global variables
 var searchMealTextEl = document.getElementById("search-meals");
 var submitMealButtonEl = document.getElementById("submit-meals");
-var ingredientEl = document.getElementById("ingredients");
-var instructionEl = document.getElementById("instructions");
+var ingredientMealEl = document.getElementById("ingredients-meals");
+var instructionMealEl = document.getElementById("instructions-meals");
 
 //main function for API calls
 async function getRandomMeal(ingredient) {
@@ -12,9 +12,7 @@ async function getRandomMeal(ingredient) {
   var meals = selectRandomMeal(list);
   //get ingredients for selected meal
   const recipe = await getMealIngredients(meals);
-  renderRecipe(recipe);
-  console.log(meals);
-  console.log(recipe);
+  renderMealRecipe(recipe);
 }
 
 function getMealList(ingredient) {
@@ -23,7 +21,6 @@ function getMealList(ingredient) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       return data.meals;
     });
   return list;
@@ -35,7 +32,6 @@ function selectRandomMeal(list) {
   //math.floor rounds down to the nearest integer
   // multiply by list length to get a random index
   let random = Math.floor(Math.random() * Object.keys(list).length);
-  console.log(random);
   // return Object.keys(random).strMeal;
   return Object.values(list[random]);
 }
@@ -48,7 +44,6 @@ function getMealIngredients(meals) {
     .then((data) => {
       //this only shows the first ingredient
       //you can get more in the same way. the ingredients and instructions are logged in the console.
-      console.log(data);
       let recipe = data.meals[0];
       return recipe;
     });
@@ -56,8 +51,8 @@ function getMealIngredients(meals) {
 }
 
 //render meal name and ingredients function
-function renderRecipe(recipe) {
-  let measurementStrings = getRecipeFields(recipe);
+function renderMealRecipe(recipe) {
+  let measurementStrings = getMealRecipeFields(recipe);
   var ingredientsHTML = `
     <h5>${recipe.strMeal}</h5>
 
@@ -71,7 +66,7 @@ function renderRecipe(recipe) {
     ingredientsHTML += innerHTML;
   }
   ingredientsHTML += "</ul>";
-  ingredientEl.innerHTML = ingredientsHTML;
+  ingredientMealEl.innerHTML = ingredientsHTML;
 
   //render meal instructions and image functional
   var instructionsHTML = `
@@ -79,11 +74,11 @@ function renderRecipe(recipe) {
     <p>${recipe.strInstructions}</p>
     <img src="${recipe.strMealThumb}" style="width:250px;">`;
 
-  instructionEl.innerHTML = instructionsHTML;
+  instructionMealEl.innerHTML = instructionsHTML;
 }
 
 //function to get fields from the response data
-function getRecipeFields(recipe) {
+function getMealRecipeFields(recipe) {
   var measurementStrings = [];
   for (var i = 1; i < 16; i++) {
     let ingredient = recipe[`strIngredient${i}`];
@@ -97,7 +92,6 @@ function getRecipeFields(recipe) {
       measurementStrings.push(builtString);
     }
   }
-  console.log(measurementStrings);
   return measurementStrings;
 }
 
