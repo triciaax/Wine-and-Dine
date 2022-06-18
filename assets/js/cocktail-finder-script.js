@@ -13,8 +13,6 @@ async function getRandomCocktail(ingredient) {
   //get ingredients for selected cocktail
   const recipe = await getCocktailIngredients(cocktail);
   renderRecipe(recipe);
-  console.log(cocktail);
-  console.log(recipe);
 }
 
 function getCocktailList(ingredient) {
@@ -23,7 +21,6 @@ function getCocktailList(ingredient) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       return data.drinks;
     });
   return list;
@@ -35,7 +32,6 @@ function selectRandomCocktail(list) {
   //math.floor rounds down to the nearest integer
   // multiply by list length to get a random index
   let random = Math.floor(Math.random() * list.length);
-  console.log(random);
   return list[random];
 }
 
@@ -47,7 +43,6 @@ function getCocktailIngredients(cocktail) {
     .then((data) => {
       //this only shows the first ingredient
       //you can get more in the same way. the ingredients and instructions are logged in the console.
-      console.log(data);
       let recipe = data.drinks[0];
       return recipe;
     });
@@ -96,7 +91,6 @@ function getRecipeFields(recipe) {
       measurementStrings.push(builtString);
     }
   }
-  console.log(measurementStrings);
   return measurementStrings;
 }
 
