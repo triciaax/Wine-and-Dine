@@ -39,7 +39,7 @@ header {
     border-style: solid;
 }
 footer{
-   position: fixed;
+   position:fixed;
    bottom: 50px;
    right: 0;
 } 
