@@ -2,21 +2,19 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-
 }
 
 body{
     background-image: url(./picture/perfect-drink-1312753.jpg);
     background-size:cover ;
     font-family: Arial, Helvetica, sans-serif;
-
-
 }
 
 header {
     padding: 20px 35px;
     width: 100%;
     position: relative;
+    
     
     
 }
@@ -26,10 +24,13 @@ header {
     font-size: 70px;
     text-align: 50%;
     color: blue;
-    background-color: antiquewhite;
-    
-    
-
-    
+    background-color: rgb(11, 11, 11);    
+    border-style: solid;
 }
+footer{
+   position: fixed;
+   bottom: 50px;
+   right: 0;
+} 
+
 
